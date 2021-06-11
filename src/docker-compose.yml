@@ -4,8 +4,11 @@ services:
   catalogdb:
     image: mongo
     
-  redisdb:
+  basketdb:
     image: redis:6.2.4-alpine
+    
+  portainer:
+    image: portainer/portainer-ce
 
   catalog.api:
     image: ${DOCKER_REGISTRY-}catalogapi
@@ -17,10 +20,7 @@ services:
     image: ${DOCKER_REGISTRY-}basketapi
     build:
       context: ./Services/Basket/Basket.API
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-    ports:
-      - "8001:80"
 
 volumes:
   mongo_data:
+  portainer_data:
