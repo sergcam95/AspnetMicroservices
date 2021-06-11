@@ -10,5 +10,9 @@ services:
       context: .
       dockerfile: "./Services/Catalog/Catalog.API/Dockerfile"
 
+  redis:
+    image: redis:6.2.4-alpine
+
 volumes:
   mongo_data:
+  redis_data:

@@ -18,3 +18,11 @@ services:
       - catalogdb
     ports: 
       - "8000:80"
+  
+  redis:
+    container_name: basket.redis
+    restart: always
+    ports:
+      - 6379:6379
+    volumes:
+      - redis_data:/data
