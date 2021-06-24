@@ -26,6 +26,11 @@ services:
     image: ${DOCKER_REGISTRY-}basketapi
     build:
       context: ./Services/Basket/Basket.API
+      
+  discount.api:
+    image: ${DOCKER_REGISTRY-}discountapi
+    build:
+      context: ./Services/Discount/Discount.API
 
 volumes:
   mongo_data:
